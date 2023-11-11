@@ -57,6 +57,7 @@ Onebasket busca transformar la pasión por el baloncesto en un éxito sostenible
 La [Base de datos](https://github.com/Resultados-deportivos/Documentacion/blob/main/Base_de_datos.md "Base de datos") 
 
 ## Web creada en wsgiref
+Reporsitorio del la Web creada siguiendo la estructura MVC, [aquí](https://github.com/Resultados-deportivos/web "Web").
 
 ### Métodos de Inserción
 
@@ -122,7 +123,7 @@ Funciones costumizadas para enviar email, definir nuevas contraseñas...
 Clase y metodos de add y get para mostrar mensajes popup en py.
 
 ## Api creada en ApiFast
-Empty
+Reporsitorio del la API creada con FastAPI, [aquí](https://github.com/Resultados-deportivos/api "API").
 
 ## Configuración-del-servidor
 [Aquí](https://github.com/Resultados-deportivos/Documentacion/tree/main/Servidor "Servidor") en tres PDF todos los configuraciones y registros del Servior DINAHOSTING y AWS. 
