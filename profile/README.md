@@ -1,5 +1,5 @@
-:basketball:
-#  Web de Basketball *Onebasket* 
+
+#  Web de Basketball *Onebasket* :basketball:
 
 1. [Descripción General](#descripción-general)
 2. [Rentabilidad](#rentabilidad)
