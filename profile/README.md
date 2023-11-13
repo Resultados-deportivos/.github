@@ -124,7 +124,145 @@ Clase y metodos de add y get para mostrar mensajes popup en py.
 
 ## Api creada en ApiFast
 Reporsitorio del la API creada con FastAPI, [aquí](https://github.com/Resultados-deportivos/api "API").
+### Código Python para una API FastAPI con SQLAlchemy y PostgreSQL
+#### Importaciones de módulos y paquetes
+```python
+from datetime import datetime, date, time
+from hashlib import sha256
+import databases
+import sqlalchemy
+from fastapi import FastAPI, HTTPException, Request, Query
+from passlib.hash import sha256_crypt
+from pydantic import BaseModel
+from sqlalchemy import Table, Column, Integer, String, Boolean
+from sqlalchemy.util import asyncio
+from starlette.middleware.cors import CORSMiddleware
+Configuración y ejecución de la aplicación FastAPI
+python
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("controladorApi:app", host="localhost", port=8080, reload=True)
+```
+##### Configuración de la aplicación FastAPI y middleware CORS
+```python
+app = FastAPI()
+origins = ["*"]  # Deberías especificar los orígenes permitidos
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
+Configuración de la base de datos PostgreSQL y definición de la tabla 'jugadores'
+python
+database_name = "eusko_basket"
+user = "admin_basket"
+password = "Reto@123"
+host = "pgsql03.dinaserver.com"
+port = "5432"
+DATABASE_URL = f"postgresql://{user}:{password}@{host}:{port}/{database_name}"
+database = databases.Database(DATABASE_URL)
+metadata = sqlalchemy.MetaData()
+players = Table(
+    "jugadores",
+    metadata,
+    Column("id", Integer),
+    Column("nombre", String(255)),
+    Column("apellido", String(255)),
+    Column("fechanacim", String(12)),
+    Column("equipoid", Integer),
+    Column("altura", String(50)),
+    Column("peso", String(50)),
+    Column("numero", Integer),
+)
+```
+##### Definición del modelo Pydantic 'jugadores'
+```python
+class jugadores(BaseModel):
+    nombre: str
+    apellido: str
+    fechanacim: str
+    equipoid: int
+    altura: str
+    peso: str
+    numero: int
+```
+##### Configuración y desconexión de la base de datos en los eventos de inicio y apagado
+```python
+@app.on_event("startup")
+async def startup_db_client():
+    await database.connect()
+@app.on_event("shutdown")
+async def shutdown_db_client():
+    await database.disconnect()
+Endpoint para obtener jugadores con filtros opcionales
+python
+@app.get("/basket/players")
+async def get_players(id: int = Query(None), nombre: str = Query(None), equipoid: int = Query(None), num: int = Query(None)):
+    query = "SELECT * FROM jugadores"
+    conditions = []
+    params = {}
+    if id is not None:
+        conditions.append("id = :id")
+        params['id'] = id
+    if nombre is not None:
+        conditions.append("nombre = :nombre")
+        params['nombre'] = nombre
+    if equipoid is not None:
+        conditions.append("equipoid = :equipoid")
+        params['equipoid'] = equipoid
+    if num is not None:
+        query += f" LIMIT {num}"
+    if conditions:
+        query += " WHERE " + " AND ".join(conditions)
+    comments = await database.fetch_all(query, values=params)
+    return comments
+```
+##### Endpoint para crear un nuevo jugador
+```python
+@app.post("/basket/players")
+async def create_player(player: jugadores):
+    fechaNacim = datetime.strptime(player.fechanacim, "%Y-%m-%d").date()
+    query = players.insert().values(
+        nombre=player.nombre,
+        apellido=player.apellido,
+        fechanacim=fechaNacim,
+        equipoid=player.equipoid,
+        altura=player.altura,
+        peso=player.peso,
+        numero=player.numero
+    )
+    await database.execute(query)
+    return {"nombre": player.nombre, **player.dict()}
 
+```
+##### Endpoint para actualizar la información de un jugador
+```python
+@app.put("/basket/players/{player_id}")
+async def update_player(player_id: int, player: jugadores):
+    fechaNacim = datetime.strptime(player.fechanacim, "%Y-%m-%d").date()
+    query = players.update().where(players.c.id == player_id).values(
+        nombre=player.nombre,
+        apellido=player.apellido,
+        fechanacim=fechaNacim,
+        equipoid=player.equipoid,
+        altura=player.altura,
+        peso=player.peso,
+        numero=player.numero
+    )
+    await database.execute(query)
+    return {"message": "Información del jugador actualizada exitosamente"}
+```
+##### Endpoint para eliminar un jugador por ID
+```python
+@app.delete("/basket/players/{player_id}")
+async def delete_player(player_id: int):
+    query = players.delete().where(players.c.id == player_id)
+    await database.execute(query)
+    return {"message": f"El jugador con ID {player_id} ha sido eliminado"} '''
+Este código define una API FastAPI que interactúa con una base de datos PostgreSQL para realizar operaciones CRUD en una tabla de jugadores de baloncesto.
+```
 ## Configuración-del-servidor
 [Aquí](https://github.com/Resultados-deportivos/Documentacion/tree/main/Servidor "Servidor") en tres PDF todos los configuraciones y registros del Servior DINAHOSTING y AWS. 
 
