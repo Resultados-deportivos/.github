@@ -137,8 +137,10 @@ from pydantic import BaseModel
 from sqlalchemy import Table, Column, Integer, String, Boolean
 from sqlalchemy.util import asyncio
 from starlette.middleware.cors import CORSMiddleware
-Configuración y ejecución de la aplicación FastAPI
-python
+```
+#### Configuración y ejecución de la aplicación FastAPI
+
+```python
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("controladorApi:app", host="localhost", port=8080, reload=True)
@@ -154,11 +156,12 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"]
 )
-Configuración de la base de datos PostgreSQL y definición de la tabla 'jugadores'
-python
+```
+#### Configuración de la base de datos PostgreSQL y definición de la tabla 'jugadores'
+```python
 database_name = "eusko_basket"
-user = "admin_basket"
-password = "Reto@123"
+user = "*"
+password = "*"
 host = "pgsql03.dinaserver.com"
 port = "5432"
 DATABASE_URL = f"postgresql://{user}:{password}@{host}:{port}/{database_name}"
