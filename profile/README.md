@@ -24,33 +24,28 @@ La visión de nuestra plataforma, "Onebasket," es convertir la pasión global po
 
 #### Segmentación de Audiencia:
 
-- Onebasket se dirigirá a diversos segmentos de audiencia, desde los fanáticos casuales que buscan resúmenes de partidos hasta seguidores apasionados que desean contenido exclusivo detrás de escena y análisis detallados. Estrategias de contenido específicas se diseñarán para cada segmento, maximizando la retención y la participación.
+- Onebasket se dirigirá a diversos segmentos de audiencia, desde los más casuales que buscan resúmenes de partidos hasta seguidores apasionados que desean contenido exclusivo detrás de escena y análisis detallados. Estrategias de contenido específicas se diseñarán para cada segmento, maximizando la retención y la participación. Se busca configurar para cada usuario el contenido que el haya clicckado y reaccionado más.
 
 #### Tendencias Emergentes:
 
-- La plataforma abrazará las tendencias emergentes, como transmisiones en vivo de eventos exclusivos, programas interactivos con jugadores y podcasts semanales que analizan las últimas noticias y tendencias del baloncesto. Se implementarán funciones de participación del usuario para atraer a audiencias más jóvenes y activas en las redes sociales.
+- La plataforma abrazará las tendencias emergentes, como transmisiones en vivo de eventos exclusivos, programas interactivos con jugadores y podcasts semanales que analizan las últimas noticias y tendencias del baloncesto. Se implementarán funciones de participación del usuario para atraer a audiencias más jóvenes y activas en las redes sociales. En veriones futuras.
 
 #### Competencia en el Mercado:
 
 ##### Análisis de Competencia:
 
-- Se identificarán plataformas de baloncesto existentes y se evaluará su alcance, calidad de contenido y características distintivas. Onebasket buscará diferenciarse mediante contenido exclusivo, acceso sin precedentes a jugadores y análisis expertos.
-
+- Las noticias del baloncesto están cubierto cubiertas por la prensa de manera local, fijando un los los target por territorio, un ejemplo claro son nba.com o feb.es(Federaciín española de baloncesto), pero el resto de ligas Europeas, Asiaticas y Amateurs no tienen una Web que cubra todas sus noticias y menos aún sus partidos. 
 ##### Colaboraciones Estratégicas:
 
 - Se establecerán alianzas estratégicas con equipos de la NBA, jugadores destacados y marcas deportivas reconocidas para aumentar la visibilidad y la credibilidad. Las colaboraciones incluirán contenido exclusivo, entrevistas y eventos especiales transmitidos en la plataforma.
 
 #### Modelo de Monetización:
 
-Onebasket considerará un modelo híbrido que incluya publicidad no intrusiva, suscripciones premium para acceso exclusivo y colaboraciones con marcas para promociones especiales. Se explorarán oportunidades de venta de mercancía y boletos a eventos a través de la plataforma.
+Onebasket considerará un modelo híbrido que incluya publicidad no intrusiva, suscripciones premium para acceso exclusivo y colaboraciones con marcas para promociones especiales. Se explorarán oportunidades de venta de mercancía y boletos a eventos a través de la plataforma, una vez todo lo anterior haya salido adelante. 
 
 #### Sostenibilidad a Largo Plazo:
 
 - Estrategias de expansión se centrarán en la entrada a mercados emergentes y la adaptación a preferencias culturales locales. Onebasket monitorizará de cerca métricas clave como la retención de usuarios y los ingresos, ajustando estrategias según sea necesario para garantizar la sostenibilidad financiera a largo plazo.
-
-#### Conclusión:
-
-Onebasket busca transformar la pasión por el baloncesto en un éxito sostenible mediante la combinación de contenido atractivo, colaboraciones estratégicas y un enfoque equilibrado en la rentabilidad. Con una visión realista y estrategias bien planificadas, la plataforma aspira a convertirse en el destino preferido para los amantes del baloncesto, asegurando al mismo tiempo su viabilidad económica a largo plazo.
 
 ## Base de datos
 
